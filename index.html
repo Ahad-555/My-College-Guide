@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل كليتي - عهد الشمري</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="splash-screen" class="splash-container">
+        <div class="splash-content">
+            <img src="logo.png" alt="لوقو دليل كليتي" class="splash-logo">
+            <h1 class="splash-title">دليل كليتي</h1>
+            <p class="splash-subtitle">بوابتك الشاملة لخدمات الكلية</p>
+            
+            <div class="loading-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-content" class="hidden">
+        <header class="top-bar">
+            <span class="admin-link" onclick="adminAccess()">MIS | عهد الشمري</span>
+            <span class="app-name">دليل كليتي التفاعلي</span>
+        </header>
+
+        <main class="container">
+            <div class="glass-card">
+                <div class="top-green-line"></div>
+                <div class="logo-area">
+                    <img src="logo.png" alt="Logo" class="main-logo">
+                </div>
+                
+                <h2 class="welcome-msg">مرحباً بك في دليل كليتي</h2>
+                
+                <div class="menu-grid">
+                    <a href="schedule.html" class="menu-item">
+                        <i class="fa-solid fa-calendar-days"></i>
+                        <span>جدول دليل كليتي</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-rocket"></i>
+                        <span>الدليل السريع</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-calculator"></i>
+                        <span>حاسبة المعدل</span>
+                    </a>
+                    <a href="#" class="menu-item">
+                        <i class="fa-solid fa-bell"></i>
+                        <span>النشرات والإعلانات</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>تم تطوير هذا الموقع لخدمة طالبات جامعة الحدود الشمالية في رفحاء</p>
+            <p>دليل كليتي التفاعلي - عهد الشمري 2026 | <i class="fa-solid fa-headset"></i> الدعم</p>
+        </footer>
+
+        <nav class="bottom-nav">
+            <a href="#" class="active"><i class="fa-solid fa-house"></i><span>الرئيسية</span></a>
+            <a href="schedule.html"><i class="fa-solid fa-calendar-days"></i><span>الجدول</span></a>
+            <a href="#"><i class="fa-solid fa-calculator"></i><span>الحاسبة</span></a>
+            <a href="#"><i class="fa-solid fa-book"></i><span>الدليل</span></a>
+            <a href="#"><i class="fa-solid fa-bell"></i><span>الإعلانات</span></a>
+        </nav>
+    </div>
+
+    <script>
+        // إخفاء شاشة البداية بعد 3 ثواني
+        setTimeout(() => {
+            document.getElementById('splash-screen').classList.add('fade-out');
+            setTimeout(() => {
+                document.getElementById('splash-screen').style.display = 'none';
+                document.getElementById('main-content').classList.remove('hidden');
+            }, 500);
+        }, 3000);
+
+        // وظيفة الزر السري للمشرفة عهد
+        function adminAccess() {
+            const pass = prompt("الرجاء إدخال رمز الوصول (للمشرفة فقط):");
+            if (pass === "ahd2026") {
+                alert("أهلاً بكِ يا عهد.. جاري الدخول للوحة التحكم");
+                window.location.href = "admin.html"; // تأكدي من وجود هذا الملف
+            } else if (pass !== null) {
+                alert("الرمز غير صحيح!");
+            }
+        }
+    </script>
+</body>
+</html>
