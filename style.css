@@ -1,79 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap');
+
 :root {
-    --primary-green: #004d40; /* نفس لون الأزرار في صورتك */
-    --bg-gradient: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
+    --primary-green: #004d40; 
+    --bg-light: #f0f4f3;
 }
 
 body {
-    background: var(--bg-gradient);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
+    background: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
     margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
     font-family: 'Cairo', sans-serif;
     direction: rtl;
 }
 
-/* الكرت الأبيض المودرن */
-.glass-container {
+/* المربع الزجاجي الأبيض */
+.main-card {
     background: white;
-    width: 85%;
-    max-width: 380px;
-    padding: 40px 20px;
-    border-radius: 40px; /* زوايا دائرية ناعمة */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    width: 90%;
+    max-width: 400px;
+    padding: 30px 20px;
+    border-radius: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
     text-align: center;
-    position: relative;
-    border-top: 8px solid var(--primary-green); /* الخط الأخضر العلوي */
+    border-top: 8px solid var(--primary-green);
+    box-sizing: border-box;
 }
 
-.logo-main {
+.logo-top {
     width: 100px;
-    margin-bottom: 20px;
+    height: auto;
+    margin-bottom: 15px;
 }
 
-.main-title {
+.welcome-title {
     color: var(--primary-green);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
-    margin-bottom: 30px;
-    border-bottom: 3px solid #81c784;
+    margin: 10px 0 25px 0;
+    position: relative;
     display: inline-block;
-    padding-bottom: 5px;
 }
 
-/* تصميم الأزرار المودرن */
-.nav-button {
+.welcome-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #81c784;
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* الأزرار الخضراء العريضة */
+.menu-link {
     background-color: var(--primary-green);
     color: white;
+    text-decoration: none;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 20px;
-    margin-bottom: 15px;
+    padding: 15px 20px;
+    margin-bottom: 12px;
     border-radius: 15px;
-    text-decoration: none;
     font-weight: 600;
-    font-size: 16px;
-    transition: 0.3s all ease;
+    font-size: 15px;
+    transition: 0.3s;
 }
 
-.nav-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,77,64,0.3);
+.menu-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,77,64,0.2);
 }
 
-.nav-button i {
-    font-size: 20px;
-    opacity: 0.9;
+.menu-link i {
+    font-size: 18px;
 }
 
-/* الفوتر تحت الكرت */
-.custom-footer {
-    margin-top: 25px;
-    text-align: center;
+/* الفوتر */
+.site-footer {
+    margin-top: 20px;
     font-size: 11px;
-    color: #777;
-    line-height: 1.8;
+    color: #888;
+    line-height: 1.6;
 }
