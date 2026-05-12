@@ -1,98 +1,79 @@
 :root {
-    --primary: #1a4d42;
-    --accent: #4caf50;
-    --bg: #f8f9fa;
+    --primary-green: #004d40; /* نفس لون الأزرار في صورتك */
+    --bg-gradient: linear-gradient(135deg, #e0f2f1 0%, #f1f8e9 100%);
 }
 
 body {
+    background: var(--bg-gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
     font-family: 'Cairo', sans-serif;
-    margin: 0; padding: 0;
-    background-color: var(--bg);
-    overflow-x: hidden;
+    direction: rtl;
 }
 
-.hidden { display: none; }
-
-/* شاشة البداية */
-.splash-container {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    background: white; z-index: 9999;
-    display: flex; justify-content: center; align-items: center;
-    transition: opacity 0.5s ease;
+/* الكرت الأبيض المودرن */
+.glass-container {
+    background: white;
+    width: 85%;
+    max-width: 380px;
+    padding: 40px 20px;
+    border-radius: 40px; /* زوايا دائرية ناعمة */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    text-align: center;
+    position: relative;
+    border-top: 8px solid var(--primary-green); /* الخط الأخضر العلوي */
 }
 
-.splash-content { text-align: center; }
-.splash-logo { width: 100px; margin-bottom: 20px; }
-.splash-title { color: var(--primary); font-size: 24px; margin: 0; }
-.splash-subtitle { color: #888; font-size: 14px; }
-
-/* دوائر التحميل - حجم صغير */
-.loading-dots { margin-top: 20px; display: flex; justify-content: center; gap: 5px; }
-.loading-dots span {
-    width: 8px; height: 8px; background: var(--primary);
-    border-radius: 50%; opacity: 0.3;
-    animation: dots 1.4s infinite ease-in-out;
-}
-.loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-.loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes dots { 0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); } 40% { opacity: 1; transform: scale(1.2); } }
-
-/* الواجهة الرئيسية */
-.top-bar {
-    display: flex; justify-content: space-between;
-    padding: 15px 20px; background: white; font-size: 12px; color: #666;
+.logo-main {
+    width: 100px;
+    margin-bottom: 20px;
 }
 
-.admin-link { cursor: pointer; font-weight: 600; }
-.admin-link:hover { color: var(--primary); }
-
-.glass-card {
-    background: white; border-radius: 25px; margin: 20px;
-    padding: 25px; position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    text-align: center; overflow: hidden;
+.main-title {
+    color: var(--primary-green);
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 30px;
+    border-bottom: 3px solid #81c784;
+    display: inline-block;
+    padding-bottom: 5px;
 }
 
-.top-green-line {
-    position: absolute; top: 0; left: 0; width: 100%; height: 6px;
-    background: var(--primary);
+/* تصميم الأزرار المودرن */
+.nav-button {
+    background-color: var(--primary-green);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s all ease;
 }
 
-.main-logo { width: 80px; margin-bottom: 15px; }
-
-.menu-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px;
+.nav-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,77,64,0.3);
 }
 
-.menu-item {
-    background: #f9f9f9; padding: 20px; border-radius: 15px;
-    text-decoration: none; color: var(--primary);
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-    font-weight: 700; font-size: 14px; transition: 0.3s;
+.nav-button i {
+    font-size: 20px;
+    opacity: 0.9;
 }
 
-.menu-item i { font-size: 24px; }
-.menu-item:hover { background: var(--light-green); transform: translateY(-3px); }
-
-/* الفوتر والحقوق */
-.main-footer {
-    text-align: center; padding: 20px; color: #999;
-    font-size: 11px; line-height: 1.6; margin-bottom: 80px;
+/* الفوتر تحت الكرت */
+.custom-footer {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    line-height: 1.8;
 }
-
-/* البار السفلي */
-.bottom-nav {
-    position: fixed; bottom: 0; width: 100%; background: white;
-    display: flex; justify-content: space-around; padding: 10px 0;
-    border-top: 1px solid #eee;
-}
-
-.bottom-nav a {
-    text-decoration: none; color: #ccc; text-align: center; font-size: 10px;
-}
-
-.bottom-nav a.active { color: var(--primary); }
-.bottom-nav i { display: block; font-size: 18px; margin-bottom: 3px; }
-
-.fade-out { opacity: 0; }
